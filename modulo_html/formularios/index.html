@@ -11,11 +11,39 @@
 
     <form >
         <label for="pnome">Primeiro Nome:</label>
-        <input type="text" id="pnome" nome="pnome" placeholder="Primeiro nome"> <br><br>
+        <input type="text" id="pnome" nome="pnome" placeholder="Primeiro nome" required> <br><br>
 
         <label for="lname">Ultimo Nome</label>
-        <input type="text" id="lname" nome="lname" placeholder="Ultimo Nome"> <br><br>
+        <input type="text" id="lname" nome="lname" placeholder="Ultimo Nome" required> <br><br>
 
+        <label>
+           <strong>
+            Qual seu nivel como programador atualmente?
+           </strong> 
+        </label>
+
+        <label> <br>
+            <input type="radio" name="nivel" value="iniciante" checked> Sou iniciante
+        </label> <br>
+        <label>
+            <input type="radio" name="nivel" value="intermediario"> Intermediario
+        </label> <br>
+        <label>
+            <input type="radio" name="nivel" value="senior"> Senior
+        </label> <br> <br>
+
+        <label for="escolaridade">
+            <strong> Sua escolaridade</strong>
+        </label>
+        <select id="escolaridade" required>
+            <option selected disabled value="">Selecione</option>
+            <option value="basica"> Educação básica</option>
+            <option value="media"> Ensino médio</option>
+            <option value="superior">Ensino superior</option>
+            <option value="posgraduado">Pos graduacao</option>
+        </select>
+
+        <br><br>
         <input type="submit" value="Cadastrar">
     </form>
 </body>
