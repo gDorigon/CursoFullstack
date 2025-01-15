@@ -9,34 +9,38 @@
 
 <body>
     <!--
-        Trabalhando com listas
+        Trabalhando com tabelas
+        > <tr> São linhas / rows
+        > <td> Define o cabeçalho da tabela
+        > <td> Colocar nossos dados na tabela
     -->
 
-    <h1>Lista ordenada</h1>
-    <ol type="I" start="2">
-        <li>Aprender HTML</li>
-        <li>Aprender CSS</li>
-        <li>Estudar JS</li>
-    </ol>
+    <h1>Trabalhando com tabelas</h1>
 
-    <h1>Lista não ordenada </h1>
-    <ul type="square" >
-        <li>Consertar gol</li>
-        <li>Treinar futebol</li>
-        <li>ir na padoca</li>
-    </ul>
+    <table>
+        <caption>Tabela de serviços</caption>
+        <tr>
+            <th>Ordem</th>
+            <th>Serviço</th>
+            <th>Preço</th>
+            <th>Status</th>
+        </tr>
 
+        <tr>
+            <td>1</td>
+            <td>troca de vidro</td>
+            <td>R$600</td>
+            <td>em andamento</td>
+        </tr>
 
-    <h2>Misturando Listas</h2>
-    <ol>
-        <li>Tecnologias WEB</li>
-            <ol type="a">
-                <li> html </li>
-                <li>css </li>
-                <li>JavaScript</li>
-            </ol>
-        <li>Proximo passo</li>
-        <li>Carreira</li>
-    </ol>
+        <tr>
+            <td>2</td>
+            <td>Limpeza</td>
+            <td>R$150</td>
+            <td>Aguardando</td>
+        </tr>
+    </table>
+
+    
 </body>
 </html>
