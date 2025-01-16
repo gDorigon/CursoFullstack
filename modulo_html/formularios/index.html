@@ -7,66 +7,9 @@
 </head>
 <body>
     
-    <h1>Formulários</h1>
+    <h1>Trabalhando com vídeos</h1>
 
-    <form>
-
-        <label for="email">Seu email</label>
-        <input type="email" name="email" id="email" required> <br> <br> 
-
-
-
-        <label for="pnome">Primeiro Nome:</label>
-        <input type="text" id="pnome" nome="pnome" placeholder="Primeiro nome" required> <br><br>
-
-        <label for="lname">Ultimo Nome</label>
-        <input type="text" id="lname" nome="lname" placeholder="Ultimo Nome" required> <br><br>
-
-        <label>
-           <strong>
-            Qual seu nivel como programador atualmente?
-           </strong> 
-        </label>
-
-        <label> <br>
-            <input type="radio" name="nivel" value="iniciante" checked> Sou iniciante
-        </label> <br>
-        <label>
-            <input type="radio" name="nivel" value="intermediario"> Intermediario
-        </label> <br>
-        <label>
-            <input type="radio" name="nivel" value="senior"> Senior
-        </label> <br> <br>
-
-        <label for="escolaridade">
-            <strong> Sua escolaridade</strong>
-        </label>
-        <select id="escolaridade" required>
-            <option selected disabled value="">Selecione</option>
-            <option value="basica"> Educação básica</option>
-            <option value="media"> Ensino médio</option>
-            <option value="superior">Ensino superior</option>
-            <option value="posgraduado">Pos graduacao</option>
-        </select> <br><br>
-
-        <label for="tecnologias">
-            <strong>Selecione as suas stacks</strong>
-        </label> <br>
-
-        <input type="checkbox" id="tecnologia1" name="tecnologia1" value="HTML">
-        <label for="tecnologia1"> HTML</label> <br>
-
-        <input type="checkbox" id="tecnologia2" name="tecnologia2" value="CSS">
-        <label for="tecnologia2"> CSS</label> <br>
-
-        <input type="checkbox" id="tecnologia3" name="tecnologia3" value="JS">
-        <label for="tecnologia3"> JS</label> <br> <br>
-
-        <label for="dtn">Data nascimento</label>
-        <input type="datetime-local" name="dtn" id="dtn"> 
-
-        <br><br>
-        <input type="submit" value="Cadastrar">
-    </form>
+    <video poster="thumb.png" controls loop muted src="natureza.mp4" width="100%" type="video/mp4"></video>
+    
 </body>
 </html>
