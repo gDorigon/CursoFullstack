@@ -1,7 +1,11 @@
 .primeiro-h1{
-    color: blueviolet;
+    /* color: red; */
+    /* color:#1899aa; */
+    /* color: rgba(25,15,255,1); */
+    color: #ff000f;
+
+    font-family: 'Roboto', sans-serif;
+
 }
 
-#unico-id{
-    color: fuchsia;
-}
+ 
