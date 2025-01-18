@@ -1,4 +1,7 @@
-h1{
-    color: red;
-    font-size: 25px;
+.primeiro-h1{
+    color: blueviolet;
+}
+
+#unico-id{
+    color: fuchsia;
 }
