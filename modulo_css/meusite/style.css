@@ -20,11 +20,10 @@ body{
     border-radius: 10px;
 }
 
-.area{
-    width: 200px;
-    height: 80px;
-    background-color: green;
-    position: fixed;
-    top: 50px;
-    right: 50px;
+
+header{
+    background-color: cyan;
+    width: 100%;
+    position: sticky;
+    top: 0;
 }
