@@ -12,21 +12,29 @@ body{
     height: 180vh;
 }
 
-
 .container{
-    background-color: #2c3130;
-    width: 500px;
-    color: #FFF;
-    margin: auto;
-    padding: 50px;
-    border: red 3px solid;
-    border-radius: 10px;
+    background-color: #121212;
+    height: 500px;
+    margin: 50px;
+
+    /* Ativando flexbox */
+    display: flex;
+    flex-direction: column-reverse;
 }
 
+.area{
+    width: 100px;
+    height: 100px;
+}
 
-header{
-    background-color: cyan;
-    width: 100%;
-    position: sticky;
-    top: 0;
+.item-1{
+    background-color: red;
+}
+
+.item-2{
+    background-color: blue;
+}
+
+.item-3{
+    background-color: green;
 }
