@@ -19,7 +19,7 @@ body{
 
     /* Ativando flexbox */
     display: flex;
-    flex-direction: column-reverse;
+    flex-direction: row;
 }
 
 .area{
@@ -29,12 +29,15 @@ body{
 
 .item-1{
     background-color: red;
+    flex: 1;
 }
 
 .item-2{
     background-color: blue;
+    flex: 1;
 }
 
 .item-3{
     background-color: green;
+    flex: 1;
 }
