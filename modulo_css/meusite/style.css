@@ -21,15 +21,10 @@ body{
 }
 
 .area{
-    position: relative;
-    width: 650px;
-    height: 500px;
-    border: 5px solid green;
-}
-
-.area-absolute{
-    position:absolute;
-    border: 5px solid blue;
-    bottom: 0;
-    
+    width: 200px;
+    height: 80px;
+    background-color: green;
+    position: fixed;
+    top: 50px;
+    right: 50px;
 }
