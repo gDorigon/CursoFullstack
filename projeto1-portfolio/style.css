@@ -39,3 +39,43 @@ body{
 }
 
 /* FIM HEADER */
+
+/* INICIO MAIN */
+
+.main{
+    width: 100%;
+    background-color: #000;
+    height: calc(100vh - 80px);
+    background-image: url(./assets/programador.png);
+    display: flex;
+    align-items: center;
+    padding-left: 10% ;
+}
+
+.main h1{
+    color: #FFFFFF;
+    font-size: 54px;
+}
+
+.main p{
+    font-size: 24px;
+    font-style: italic;
+    color: #1e96fc;
+    margin-top: 10px;
+    margin-bottom: 35px;
+}
+
+.call-to-action{
+    cursor: pointer;
+    background-color: #FFF;
+    border: 0;
+    padding: 14px;
+    border-radius: 6px;
+    font-size: 18px;
+    font-weight: bold;
+}
+
+.main a{
+    text-decoration: none;
+    color: #181818;
+}
