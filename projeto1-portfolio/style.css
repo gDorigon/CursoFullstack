@@ -31,6 +31,7 @@ body{
     text-decoration: none;
     color: #ddd;
     padding: 20px;
+    transition: 0.2s;
 }
 
 .nav-list a:hover{
@@ -73,9 +74,48 @@ body{
     border-radius: 6px;
     font-size: 18px;
     font-weight: bold;
+    transition: 0.4s;
 }
 
 .main a{
     text-decoration: none;
     color: #181818;
 }
+
+.call-to-action:hover{
+    transform: scale(1.1);
+}
+
+/* FIM MAIN */
+
+/* INICIO ABOUT */
+
+.about{
+    background-color: #FFF;
+    width: 100%;
+    padding-left: 10%;
+    padding-right: 10%;
+    padding-top: 80px;
+    padding-bottom: 80px;
+
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.about div{
+    max-width: 50%;
+    padding-right: 40px;
+}
+
+.about img{
+    max-width: 450px;
+    border-radius: 8px;
+}
+
+.about h2{
+    font-size: 32px;
+    margin-bottom: 14px;
+}
+
+/* FIM ABOUT */
