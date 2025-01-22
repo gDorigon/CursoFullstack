@@ -210,15 +210,16 @@ footer p{
     /* INICIO MAIN */
 
     .main h1{
-        font-size: 45px;
+        font-size: 40px;
     }
 
     .main p {
-        font-size: 18px;
+        font-size: 20px;
     }
 
     .main{
         background-size: cover;
+        height: 70vh;
     }
 
     /* FIM MAIN */
@@ -252,6 +253,10 @@ footer p{
 
     .projects img{
         width: 25%;
+    }
+
+    .projects{
+        padding: 20px;
     }
 
     /* INICIO RODAPE */
