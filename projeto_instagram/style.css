@@ -153,3 +153,38 @@ footer a{
     padding-left: 20px;
     display: inline-block;
 }
+
+/* PAGINA SIGNUP */
+
+#container-signup{
+    margin: 0 auto;
+    min-height: 100%;
+    max-width: 400px;
+    display: flex;
+    align-items: center;
+}
+
+.message{
+    margin: 10px 70px;
+}
+
+.message span {
+    text-align: center;
+    font-size: 17px;
+    line-height: 20px;
+    font-weight: bold;
+    color: #8e8e8e;
+}
+
+.cta-button{
+    width: 320px;
+    margin: 10px 0;
+    height: 35px;
+    color: #FFF;
+    border: 0;
+    border-radius: 4px;
+    font-size: 15px;
+    cursor: pointer;
+    font-weight: bold;
+    background-color: #3c96ed;
+}
