@@ -6,11 +6,17 @@
 
 a {
     text-decoration: none;
-    color: #3c96ed;
+    color: var(--button-primary);
 }
 
 body {
-    background: #FAFAFA;
+    --background: #FAFAFA;
+    --white: #fff;
+    --black: #000000;
+    --button-primary: #0095f6;
+    --border-primary: #e6e6e6;
+    
+    background-color: var(--background);
     height: 100%;
     width: 100%;
     margin: 0;
@@ -50,8 +56,8 @@ body {
 }
 
 .login-panel {
-    background-color: #FFF;
-    border: 1px solid #e6e6e6;
+    background-color: var(--white);
+    border: 1px solid var(--border-primary);
     text-align: center;
     padding: 20px 0;
 }
@@ -69,8 +75,8 @@ form {
 
 input[type="password"],
 input[type="text"] {
-    background-color: #FFFFFF;
-    border: 1px solid rgb(236, 234, 234);
+    background-color: var(--white);
+    border: 1px solid var(--border-primary);
     height: 40px;
     border-radius: 6px;
     margin-top: 10px;
@@ -97,8 +103,8 @@ input[type="submit"] {
     margin-top: 10px;
     height: 30px;
     border: 0;
-    background-color: #3c96ed;
-    color: #FFFFFF;
+    background-color: var(--button-primary);
+    color: var(--white);
     border-radius: 4px;
     font-size: 16px;
     font-weight: bold;
@@ -107,9 +113,9 @@ input[type="submit"] {
 }
 
 .infobox {
-    background-color: #FFF;
+    background-color: var(--white);
     height: 60px;
-    border: 1px solid rgb(236, 234, 234);
+    border: 1px solid var(--border-primary);
     margin: 10px auto 0;
     display: flex;
     justify-content: center;
@@ -184,13 +190,13 @@ footer a {
     width: 320px;
     margin: 10px 0;
     height: 35px;
-    color: #FFF;
+    color: var(--white);
     border: 0;
     border-radius: 4px;
     font-size: 15px;
     cursor: pointer;
     font-weight: bold;
-    background-color: #3c96ed;
+    background-color: var(--button-primary);
 }
 
 .divisor-container {
@@ -202,7 +208,7 @@ footer a {
 
 .line {
     height: 1px;
-    background-color: #e6e6e6;
+    background-color: var(--border-primary);
     width: 35%;
 }
 
