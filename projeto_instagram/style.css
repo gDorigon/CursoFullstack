@@ -1,15 +1,15 @@
-*{
+* {
     box-sizing: border-box;
     margin: 0;
     padding: 0;
 }
 
-a{
+a {
     text-decoration: none;
     color: #3c96ed;
 }
 
-body{
+body {
     background: #FAFAFA;
     height: 100%;
     width: 100%;
@@ -19,11 +19,11 @@ body{
     line-height: 18px;
 }
 
-#wrapper{
+#wrapper {
     height: 100vh;
 }
 
-#container{
+#container {
     margin: 0 auto;
     min-height: 100%;
     width: 800px;
@@ -31,12 +31,12 @@ body{
     align-items: center;
 }
 
-.column{
+.column {
     flex-grow: 1;
     width: 50%;
 }
 
-.left{
+.left {
     background-image: url(./assets/main-foto.png);
     background-size: 450px;
     background-repeat: no-repeat;
@@ -45,29 +45,30 @@ body{
     margin-bottom: 50px;
 }
 
-.right{
+.right {
     padding-left: 20px;
 }
 
-.login-panel{
+.login-panel {
     background-color: #FFF;
     border: 1px solid #e6e6e6;
     text-align: center;
     padding: 20px 0;
 }
 
-.logo-img{
+.logo-img {
     width: 175px;
 }
 
-form{
+form {
     display: flex;
     flex-direction: column;
     align-items: center;
     justify-content: center;
 }
 
-input[type="password"], input[type="text"]{
+input[type="password"],
+input[type="text"] {
     background-color: #FFFFFF;
     border: 1px solid rgb(236, 234, 234);
     height: 40px;
@@ -79,17 +80,19 @@ input[type="password"], input[type="text"]{
     color: #000000;
 }
 
-input[type="password"]::placeholder, input[type="text"]::placeholder{
+input[type="password"]::placeholder,
+input[type="text"]::placeholder {
     color: rgb(165, 164, 164);
     outline: 0;
 }
 
-input[type="password"]:focus, input[type="text"]:focus{
+input[type="password"]:focus,
+input[type="text"]:focus {
     outline: 0;
     border: 1px solid #a1a1a1;
 }
 
-input[type="submit"]{
+input[type="submit"] {
     width: 320px;
     margin-top: 10px;
     height: 30px;
@@ -103,7 +106,7 @@ input[type="submit"]{
     cursor: pointer;
 }
 
-.infobox{
+.infobox {
     background-color: #FFF;
     height: 60px;
     border: 1px solid rgb(236, 234, 234);
@@ -112,22 +115,23 @@ input[type="submit"]{
     justify-content: center;
     align-items: center;
 }
+
 .infobox p a {
     font-weight: bold;
     user-select: none;
 }
 
-.get-app-panel{
+.get-app-panel {
     margin-top: 20px;
     text-align: center;
 }
 
-.app-buttons{
+.app-buttons {
     margin-top: 16px;
 
 }
 
-.app-buttons img{
+.app-buttons img {
     height: 40px;
     padding: 0 2px;
 }
@@ -138,7 +142,7 @@ footer {
     margin-top: -50px;
 }
 
-footer a{
+footer a {
     color: black;
     text-transform: uppercase;
     font-weight: bold;
@@ -156,7 +160,7 @@ footer a{
 
 /* PAGINA SIGNUP */
 
-#container-signup{
+#container-signup {
     margin: 0 auto;
     min-height: 100%;
     max-width: 400px;
@@ -164,7 +168,7 @@ footer a{
     align-items: center;
 }
 
-.message{
+.message {
     margin: 10px 70px;
 }
 
@@ -176,7 +180,7 @@ footer a{
     color: #8e8e8e;
 }
 
-.cta-button{
+.cta-button {
     width: 320px;
     margin: 10px 0;
     height: 35px;
@@ -189,22 +193,62 @@ footer a{
     background-color: #3c96ed;
 }
 
-.divisor-container{
+.divisor-container {
     display: flex;
     justify-content: center;
     align-items: center;
     margin: 10px 0;
 }
 
-.line{
+.line {
     height: 1px;
     background-color: #e6e6e6;
     width: 35%;
 }
 
-.divisor-tag{
+.divisor-tag {
     font-weight: bold;
     margin: 0 2.5%;
     color: #8e8e8e;
     user-select: none;
+}
+
+/* FIM PAGINA SIGNUP */
+
+/* RESPONSIVIDADE */
+
+@media(max-width:900px) {
+    .left {
+        display: none;
+    }
+
+    #container {
+        width: 70%;
+    }
+
+    .right {
+        padding-left: 0;
+    }
+}
+
+@media(max-width:560) {
+    #container {
+        width: 90%;
+    }
+
+    #container-signup {
+        width: 90%;
+    }
+
+    input[type="password"],input[type="text"],input[type="submit"] {
+        width: 85%;
+    }
+
+    .cta-button{
+        width: 85%;
+    }
+
+    .message{
+        margin: 10px 25px;
+    }
 }
