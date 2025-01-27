@@ -116,3 +116,18 @@ input[type="submit"]{
     font-weight: bold;
     user-select: none;
 }
+
+.get-app-panel{
+    margin-top: 20px;
+    text-align: center;
+}
+
+.app-buttons{
+    margin-top: 16px;
+
+}
+
+.app-buttons img{
+    height: 40px;
+    padding: 0 2px;
+}
