@@ -23,3 +23,18 @@ function sair(){
     alert("Até mais");
     area.innerHTML = "Você saiu";
 }
+
+function mediaAluno(nota1, nota2){
+    var media = (nota1 + nota2) /2;
+
+    if(media >= 7){
+        alert("Aluno aprovado! media: " + media);
+    } else if( media < 7){
+        alert("Aluno reprovado! media: " + media);
+    }
+}
+
+function aluno(nome, curso){
+    var mensagem = "Seja bem vindo " + nome + " ao curso de " +curso;
+    console.log(mensagem);
+}
