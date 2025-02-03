@@ -1,11 +1,25 @@
-// var x = 0;
+function pedir(){
+    var valor = prompt("Digite um valor de 1 a 4");
 
-// while(x <= 10){
-//     document.write("<br> o valor do x é: " + x);
-//     x++;
-// }
+    switch(Number(valor)){
+        case 1:
+            alert("Você escolheu suco");
+        break;
 
+        case 2:
+            alert("Você escolheu agua gelada");
+        break;
 
-for(a = 0; a < 5; a++){
-    document.write("<br> o valor do x é: " + a);
+        case 3:
+            alert("Você escolheu sorvete");
+        break;
+
+        case 4:
+            alert("Você escolheu garçom");
+        break;
+
+        default:
+            alert("Opção inválida!");
+        break;
+    }
 }
