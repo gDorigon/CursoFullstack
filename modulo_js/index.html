@@ -7,23 +7,21 @@
 </head>
 <body>
     
-    <h1>Escolha um item</h1>
-    <ul>
-        <li>
-            1- Suco
-        </li>
-        <li>
-            2- Agua gelada
-        </li>
-        <li>
-            3- Sorvete
-        </li>
-        <li>
-            4 - chamar o garçom
-        </li>
-    </ul>
+    <form onsubmit="return calcular(event)">
+        <label>Digite seu peso:</label> <br>
+        <input type="text" name="peso" id="peso" placeholder="Informe seu peso"> <br><br>
 
-    <button onclick="pedir()">Pedir</button>
+        <label>Digite sua altura:</label> <br>
+        <input type="text" name="altura" id="altura" placeholder="Digite sua altura"> <br><br>
+
+        <input type="submit" value="Calcular imc">
+    </form>
+
+    <div id="resultado"></div>
+
+    <br><br><br>
+
+    <div id="final"></div>
 
     <script src="script.js"></script>
 </body>
