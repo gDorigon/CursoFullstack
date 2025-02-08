@@ -1,25 +1,9 @@
 
 
+let nome = "Guilherme";
+let sobrenome = "Dorigon";
+let idade = 20
 
+// let mensagem = "Meu nome é " + nome + " " + sobrenome + " e eu tenho " + idade + " anos de idade"; 
 
-// let pessoa = {
-//     nome: "Matheus",
-//     idade: 26,
-//     altura: 1.85,
-//     cargo: "Programador"
-// };
-
-
-// let carro = {
-//     nome : "Golf",
-//     cor : "Branco",
-//     potencia : "140cv"
-// }
-
-let usuarios = [
-    {nome: "Guilherme", cargo: "Dev", status: "Ativo"},
-    {nome: "Jose", cargo: "Dev", status: "Ativo"},
-    {nome: "Leleco", cargo: "Dev", status: "Ativo"},
-    {nome: " Joao", cargo: "Dev", status: "Ativo"}
-
-];
+let mensagem = `Meu nome é ${nome} ${sobrenome} e eu tenho ${idade} anos de idade`;
