@@ -1,25 +1,13 @@
-// Funções anonimas
 
 
-function somar(a,b){
-    let total = a + b
-    return console.log(total);
-}
+// Includes, startsWith, endsWith
 
-somar(10, 20);
+// let nomes = ["Mateus", "Guilherme", "Lucas"];
+
+// console.log(nomes.includes("Guilherme")); // true ou false
 
 
 
-let subtrair = (valor1, valor2) =>{
-    let total = valor1 - valor2;
-    console.log(total);
-}
+// let nome = "Guilherme"
 
-
-subtrair(90,20);
-
-let numeros = [1,3,5,10];
-
-numeros.map((item) => {
-    console.log(item);
-})
+// console.log(nome.startsWith("G"));
