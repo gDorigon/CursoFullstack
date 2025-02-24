@@ -1,5 +1,5 @@
 // Importa o hook useState do React, que permite adicionar estados ao componente.
-import { useState } from 'react';
+import { useState, useEffect } from 'react';
 
 function App() {
   // Define um estado 'input' que armazenará o texto digitado pelo usuário no campo de entrada.
@@ -12,6 +12,18 @@ function App() {
     'Pagar conta de luz',
     'Estudar ReactJS'
   ]);
+
+  useEffect(() => {
+    const tarefasStorage = localStorage.getItem('@tarefa');
+
+    if (tarefasStorage) {
+      setTarefas(JSON.parse(tarefasStorage))
+    }
+  }, [])
+
+  useEffect(() => {
+    localStorage.setItem('@tarefa', JSON.stringify(tarefas))
+  }, [tarefas])
 
   // Função chamada quando o usuário tenta adicionar uma nova tarefa.
   function handleRegister(e) {
@@ -36,7 +48,7 @@ function App() {
         <label> Nome</label><br />
 
         {/* Campo de entrada onde o usuário digita a tarefa */}
-        <input 
+        <input
           placeholder='Digite uma tarefa' // Texto de exemplo dentro do campo
           value={input} // O valor do campo de entrada está vinculado ao estado 'input'
           onChange={(e) => setInput(e.target.value)} // Atualiza o estado 'input' conforme o usuário digita
