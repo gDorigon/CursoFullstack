@@ -1,7 +1,7 @@
 import { useState, useEffect } from 'react'
-import { db } from './firebaseConnection';
+import { db, auth } from './firebaseConnection';
 import { doc, setDoc, collection, addDoc, getDoc, getDocs, updateDoc, deleteDoc, onSnapshot } from 'firebase/firestore'
-
+import { createUserWithEmailAndPassword } from 'firebase/auth';
 import './app.css';
 
 function App() {
@@ -10,9 +10,12 @@ function App() {
   const [idPost, setIdPost] = useState('');
   const [posts, setPosts] = useState([]);
 
-  useEffect(()=>{
+  const [email, setEmail] = useState('');
+  const [senha, setSenha] = useState('');
+
+  useEffect(() => {
     async function loadPosts() {
-      const unsub = onSnapshot(collection(db, "posts"),(snapshot)=>{
+      const unsub = onSnapshot(collection(db, "posts"), (snapshot) => {
         let listaPost = [];
 
         snapshot.forEach((doc) => {
@@ -56,8 +59,6 @@ function App() {
       .catch((error) => {
         console.log("ERRO " + error)
       })
-
-
   }
 
 
@@ -95,30 +96,46 @@ function App() {
       })
   }
 
-  async function editarPost(){
+  async function editarPost() {
     const docRef = doc(db, "posts", idPost)
 
     await updateDoc(docRef, {
       titulo: titulo,
       autor: autor,
     })
-    .then(()=>{
-      console.log("post atualizado");
+      .then(() => {
+        console.log("post atualizado");
 
-      setIdPost('');
-      setAutor('');
-      setTitulo('');
-    })
-    .catch(()=>{
-      console.log("ERRO")
-    })
+        setIdPost('');
+        setAutor('');
+        setTitulo('');
+      })
+      .catch(() => {
+        console.log("ERRO")
+      })
   }
 
-  async function ecluirPost(id){
+  async function ecluirPost(id) {
     const docRef = doc(db, "posts", id);
     await deleteDoc(docRef)
+      .then(() => {
+        console.log("Excluido com sucesso");
+      })
+  }
+
+  async function novoUsuario(){
+    await createUserWithEmailAndPassword(auth, email, senha)
     .then(()=>{
-      console.log("Excluido com sucesso");
+      console.log("Usuário criado")
+      setEmail('')
+      setSenha('')
+    })
+    .catch((error)=>{
+      if(error.code === 'auth/weak-password'){
+        console.log("ERRO! Senha fraca");
+      } else if(error.code === 'auth/email-already-in-use'){
+        console.log("ERRO! Email já está em uso")
+      }
     })
   }
 
@@ -127,13 +144,35 @@ function App() {
       <h1>ReactJS + Firebase :)</h1>
 
       <div className="container">
+        <h2> Usuários </h2>
+        <label> Email </label>
+        <input
+          value={email}
+          onChange={(e) => setEmail(e.target.value)}
+          placeholder='Digite seu email'
+        /> <br />
 
+        <label> Senha </label>
+        <input
+          value={senha}
+          onChange={(e) => setSenha(e.target.value)}
+          placeholder='Digite sua senha'
+        /> <br/>
+
+        <button onClick={novoUsuario}> Cadastrar </button>
+      </div>
+
+      <br/>
+      <hr/>
+
+      <div className="container">
+      <h2> Posts </h2>
         <label>ID do post:</label>
         <input
-        placeholder='Digite o ID do post'
-        value={idPost}
-        onChange={(e)=> setIdPost(e.target.value)}
-        /> <br/>
+          placeholder='Digite o ID do post'
+          value={idPost}
+          onChange={(e) => setIdPost(e.target.value)}
+        /> <br />
         {/* qMVhNxqdNDznbsErljLs */}
 
 
@@ -160,13 +199,13 @@ function App() {
 
         <ul>
 
-          {posts.map((post)=>{
-            return(
+          {posts.map((post) => {
+            return (
               <li key={post.id}>
-                <strong>ID: {post.id}</strong> <br/>
-                <span> Titulo: {post.titulo} </span> <br/>
-                <span> Autor: {post.autor}</span> <br/>
-                <button onClick={ ()=> ecluirPost(post.id) }>Excluir</button> <br/><br/>
+                <strong>ID: {post.id}</strong> <br />
+                <span> Titulo: {post.titulo} </span> <br />
+                <span> Autor: {post.autor}</span> <br />
+                <button onClick={() => ecluirPost(post.id)}>Excluir</button> <br /><br />
               </li>
             )
           })}
