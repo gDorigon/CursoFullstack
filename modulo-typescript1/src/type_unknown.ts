@@ -17,6 +17,6 @@ let totalPedido: unknown = 15;
 let entregador: number = idPedido;
 
 // Valor do tipo unknown só podem ser atribuidos ao tipo unknown ou any
-let totalEntrega: unknown = totalPedido;
+let totalEntrega: any = totalPedido;
 
 console.log(totalEntrega)
