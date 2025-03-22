@@ -1,13 +1,17 @@
 
-// Herança > quanto nós temos uma classe que herda outra classe
+// 4 Modificadores: public, private, protected, readonly
 
 class Usuario{
-    nome: string;
-    email: string;
+    public nome: string;
+    public email: string;
 
     constructor(nome: string, email: string){
         this.nome = nome;
         this.email = email;
+    }
+
+    mudarCargo(): void {
+        console.log("Alterando cargo...")
     }
 }
 
@@ -26,4 +30,9 @@ class Admin extends Usuario{
 
 const usuario1 = new Admin("Guilherme", "guilherme@teste.com", "Programador", 2);
 
+usuario1.cargo = "Designer";
+
+usuario1.mudarCargo();
+
 console.log(usuario1)
+
