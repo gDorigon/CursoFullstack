@@ -6,4 +6,6 @@ class Loja {
     }
 }
 const redBurguer = new Loja("RedBurguer", "Lanches");
+const superSucos = new Loja("Sucao gelado", "sucos");
 console.log(redBurguer.categoria);
+console.log(superSucos.nome);
