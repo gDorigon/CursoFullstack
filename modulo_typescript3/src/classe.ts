@@ -1,5 +1,7 @@
 
 
+type Status = "ABERTO" | "FECHADO";
+
 class Loja{
     //Atributos
     nome: string;
@@ -7,14 +9,37 @@ class Loja{
 
     constructor(nome: string, categoria: string){
         this.nome = nome;
-        this.categoria = categoria
+        this.categoria = categoria;
+    }
+
+    criarLoja(){
+        console.log(`Loja ${this.nome}, categoria: ${this.categoria} criada!`)
+    }
+
+    emitirPedido(mesa: number, ...pedidos: string[]): string {
+
+        pedidos.map((pedido)=>{
+            console.log(`Saindo novo pedido: ${pedido}`)
+        })
+        return `Pedido na mesa: ${mesa}`;
+    }
+
+    mudarStatus(status: Status): void{
+        if(status === "ABERTO"){
+            console.log("LOJA ABERTA COM SUCESSO");
+        } else {
+            console.log("LOJA FECHADA")
+        }
     }
 }
 
-const redBurguer = new Loja("RedBurguer", "Lanches");
+const redBurguer = new Loja("Red Burguer", "Lanches");
 
-const superSucos = new Loja("Sucao gelado", "sucos")
+redBurguer.criarLoja();
 
-console.log(redBurguer.categoria)
+const retornoLoja = redBurguer.emitirPedido(12, "Suco gelado", "hamburguer duplo", "coca 2L");
 
-console.log(superSucos.nome)
+redBurguer.mudarStatus("ABERTO")
+
+console.log(retornoLoja);
+
