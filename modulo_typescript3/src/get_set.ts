@@ -28,8 +28,8 @@ const GTA5 = new Jogo("192.168.5.10");
 
 try{
     GTA5.setServidorIP = "192.200.255.255";
-} catch{
-    console.log(error.message);
+} catch(error){
+    // console.log(error.message);
 }
 
 
