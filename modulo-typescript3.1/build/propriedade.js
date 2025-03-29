@@ -30,12 +30,16 @@ function validaNome(tamanho) {
     };
 }
 class Jogo {
-    constructor(nome) {
+    constructor(nome, titulo) {
         this.nome = nome;
+        this.titulo = titulo;
     }
 }
 __decorate([
     validaNome(5)
 ], Jogo.prototype, "nome", void 0);
-const jogo1 = new Jogo("LEFT4DEAD");
-console.log(jogo1.nome);
+__decorate([
+    validaNome(15)
+], Jogo.prototype, "titulo", void 0);
+const jogo1 = new Jogo("LEFT4DEAD", "Jogo online legal");
+console.log(jogo1.titulo);

@@ -33,11 +33,15 @@ class Jogo{
     @validaNome(5)
     nome: string;
 
-    constructor(nome: string){
+    @validaNome(15)
+    titulo: string;
+
+    constructor(nome: string, titulo: string){
         this.nome = nome;
+        this.titulo = titulo;
     }
 }
 
-const jogo1 = new Jogo("LEFT4DEAD");
+const jogo1 = new Jogo("LEFT4DEAD", "Jogo online legal");
 
-console.log(jogo1.nome)
+console.log(jogo1.titulo)
