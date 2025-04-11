@@ -32,6 +32,7 @@ export default function App() {
       {tasks.map((item, index) => (
         <section key={item}>
           <span>{item}</span>
+          <button>Excluir</button>
         </section>
       ))}
     </div>
