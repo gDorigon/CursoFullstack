@@ -1,7 +1,12 @@
-import { useState, useEffect, useDebugValue } from 'react'
+import { useState, useEffect, useRef } from 'react'
 
 
 export default function App() {
+
+  const inputRef = useRef<HTMLInputElement>(null)
+  const firstRender = useRef(true)
+
+
   const [tasks, setTesks] = useState<string[]>([])
 
   const [editTask, setEditTask] = useState({
@@ -19,6 +24,18 @@ export default function App() {
     }
   }, [])
 
+  useEffect(() => {
+    if (firstRender.current) {
+      firstRender.current = false;
+      return;
+    }
+    localStorage.setItem("@cursoreact", JSON.stringify(tasks))
+
+  }, [tasks])
+
+
+
+
   function handleRegister() {
     if (!input) {
       alert("Preencha o nome da tarefa")
@@ -31,7 +48,6 @@ export default function App() {
 
     setTesks(tarefas => [...tarefas, input])
     setInput("")
-    localStorage.setItem("@cursoreact", JSON.stringify([...tasks, input]))
   }
 
   function handleSaveEdit() {
@@ -47,19 +63,21 @@ export default function App() {
     })
 
     setInput('')
-    localStorage.setItem("@cursoreact", JSON.stringify([allTasks]))
   }
 
   function handleDelet(item: string) {
     const removeTask = tasks.filter(task => task !== item)
     setTesks(removeTask)
 
-    localStorage.setItem("@cursoreact", JSON.stringify(removeTask))
   }
 
 
 
   function handleEdit(item: string) {
+
+    inputRef.current?.focus();
+
+    inputRef.current?.focus();
     setInput(item)
     setEditTask({
       enabled: true,
@@ -74,7 +92,8 @@ export default function App() {
 
       <input type="text" placeholder='Digite o nome da tarefa...'
         value={input}
-        onChange={(e) => setInput(e.target.value)} />
+        onChange={(e) => setInput(e.target.value)}
+        ref={inputRef} />
 
       <button onClick={handleRegister}> {editTask.enabled ? "Atualizar Tarefa" : "Adicionar Tarefa"} </button>
       <hr />
@@ -84,6 +103,8 @@ export default function App() {
           <span>{item}</span>
           <button onClick={() => handleEdit(item)}>Editar</button>
           <button onClick={() => handleDelet(item)}>Excluir</button>
+          <br />
+
         </section>
       ))}
     </div>
