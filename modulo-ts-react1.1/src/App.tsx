@@ -11,7 +11,12 @@ export default function App() {
 
 
   useEffect(() => {
-    console.log("componente montado na tela ")
+
+    const tarefasSalvas = localStorage.getItem("@cursoreact")
+
+    if (tarefasSalvas) {
+      setTesks(JSON.parse(tarefasSalvas));
+    }
   }, [])
 
   function handleRegister() {
@@ -26,6 +31,7 @@ export default function App() {
 
     setTesks(tarefas => [...tarefas, input])
     setInput("")
+    localStorage.setItem("@cursoreact", JSON.stringify([...tasks, input]))
   }
 
   function handleSaveEdit() {
@@ -41,11 +47,14 @@ export default function App() {
     })
 
     setInput('')
+    localStorage.setItem("@cursoreact", JSON.stringify([allTasks]))
   }
 
   function handleDelet(item: string) {
     const removeTask = tasks.filter(task => task !== item)
     setTesks(removeTask)
+
+    localStorage.setItem("@cursoreact", JSON.stringify(removeTask))
   }
 
 
