@@ -1,4 +1,4 @@
-import { useState } from 'react'
+import { useState, useEffect, useDebugValue } from 'react'
 
 
 export default function App() {
@@ -7,7 +7,12 @@ export default function App() {
   const [editTask, setEditTask] = useState({
     enabled: false,
     task: '',
-  })
+  });
+
+
+  useEffect(() => {
+    console.log("componente montado na tela ")
+  }, [])
 
   function handleRegister() {
     if (!input) {
