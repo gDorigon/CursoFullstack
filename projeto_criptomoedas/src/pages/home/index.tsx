@@ -22,6 +22,7 @@ export function Home() {
                     <tr>
                         <th scope='col'>Moeda</th>
                         <th scope='col'>Valor de mercado</th>
+                        <th scope='col'>Preço</th>
                         <th scope='col'>Volume</th>
                         <th scope='col'>Mudança 24h</th>
                     </tr>
@@ -50,7 +51,7 @@ export function Home() {
                             2B
                         </td>
 
-                        <td className={styles.tdLabel} data-label='Mudança 24h'>
+                        <td className={styles.tdProfit} data-label='Mudança 24h'>
                             1.20
                         </td>
 
