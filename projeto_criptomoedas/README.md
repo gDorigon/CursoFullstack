@@ -1,54 +1,36 @@
-# React + TypeScript + Vite
+# 🪙 Projeto: Lista de Criptomoedas
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+Este projeto foi desenvolvido como parte do **curso do Sujeito Programador**, com o objetivo de aplicar conceitos de **React** em uma aplicação real, consumindo uma API pública.
 
-Currently, two official plugins are available:
+## 📌 Sobre o projeto
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+A aplicação lista diversas criptomoedas em tempo real, utilizando a API da [CoinCap](https://coincap.io/). Ela exibe as seguintes informações de cada ativo:
 
-## Expanding the ESLint configuration
+- 💰 **Nome e símbolo da criptomoeda**
+- 📈 **Preço atual**
+- 🔁 **Variação percentual nas últimas 24h**
+- 📊 **Valor de mercado (market cap)**
+- 🧮 **Volume de negociação nas últimas 24h**
 
-If you are developing a production application, we recommend updating the configuration to enable type-aware lint rules:
+A interface é dinâmica e foi construída utilizando **React**, proporcionando uma experiência fluida e interativa ao usuário.
 
-```js
-export default tseslint.config({
-  extends: [
-    // Remove ...tseslint.configs.recommended and replace with this
-    ...tseslint.configs.recommendedTypeChecked,
-    // Alternatively, use this for stricter rules
-    ...tseslint.configs.strictTypeChecked,
-    // Optionally, add this for stylistic rules
-    ...tseslint.configs.stylisticTypeChecked,
-  ],
-  languageOptions: {
-    // other options...
-    parserOptions: {
-      project: ['./tsconfig.node.json', './tsconfig.app.json'],
-      tsconfigRootDir: import.meta.dirname,
-    },
-  },
-})
-```
+## 🚀 Tecnologias utilizadas
 
-You can also install [eslint-plugin-react-x](https://github.com/Rel1cx/eslint-react/tree/main/packages/plugins/eslint-plugin-react-x) and [eslint-plugin-react-dom](https://github.com/Rel1cx/eslint-react/tree/main/packages/plugins/eslint-plugin-react-dom) for React-specific lint rules:
+- React
+- Axios (para requisições HTTP)
+- CoinCap API
 
-```js
-// eslint.config.js
-import reactX from 'eslint-plugin-react-x'
-import reactDom from 'eslint-plugin-react-dom'
+## 🧠 O que aprendi
 
-export default tseslint.config({
-  plugins: {
-    // Add the react-x and react-dom plugins
-    'react-x': reactX,
-    'react-dom': reactDom,
-  },
-  rules: {
-    // other rules...
-    // Enable its recommended typescript rules
-    ...reactX.configs['recommended-typescript'].rules,
-    ...reactDom.configs.recommended.rules,
-  },
-})
-```
+- Integração com API externa usando Axios
+- Manipulação de estados e efeitos com `useState` e `useEffect`
+- Tratamento de dados e exibição em componentes reutilizáveis
+- Formatação de valores numéricos e percentuais para melhor usabilidade
+
+## 🔗 API utilizada
+
+- [CoinCap API](https://docs.coincap.io/)
+
+---
+
+Desenvolvido com 💻 por **Guilherme Dorigon** — Projeto do curso [Sujeito Programador](https://sujeitoprogramador.com/)
