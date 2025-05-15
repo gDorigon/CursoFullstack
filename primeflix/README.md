@@ -20,10 +20,6 @@ A interface é dinâmica e foi construída utilizando **React**, proporcionando 
 - Axios (para requisições HTTP)
 - CoinCap API
 
-## 📷 Captura de Tela
-
-*(Adicione aqui uma imagem ou GIF da sua aplicação rodando, se quiser)*
-
 ## 🧠 O que aprendi
 
 - Integração com API externa usando Axios
