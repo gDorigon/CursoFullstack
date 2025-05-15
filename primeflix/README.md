@@ -1,36 +1,38 @@
-# 🪙 Projeto: Lista de Criptomoedas
+# 🎬 Projeto: PrimeFlix
 
-Este projeto foi desenvolvido como parte do **curso do Sujeito Programador**, com o objetivo de aplicar conceitos de **React** em uma aplicação real, consumindo uma API pública.
+Este projeto foi desenvolvido como parte do **curso do Sujeito Programador**, com o objetivo de aplicar os conhecimentos em **React** e integração com APIs externas, criando uma experiência completa de navegação por filmes.
 
 ## 📌 Sobre o projeto
 
-A aplicação lista diversas criptomoedas em tempo real, utilizando a API da [CoinCap](https://coincap.io/). Ela exibe as seguintes informações de cada ativo:
+O **PrimeFlix** é uma aplicação web que permite ao usuário:
 
-- 💰 **Nome e símbolo da criptomoeda**
-- 📈 **Preço atual**
-- 🔁 **Variação percentual nas últimas 24h**
-- 📊 **Valor de mercado (market cap)**
-- 🧮 **Volume de negociação nas últimas 24h**
+- 🔍 **Explorar uma lista de filmes populares**
+- 📄 **Visualizar detalhes completos de cada filme em uma página dedicada**
+- 🎞️ **Assistir ao trailer do filme (quando disponível)**
+- ⭐ **Adicionar filmes aos favoritos e visualizá-los em uma lista separada**
 
-A interface é dinâmica e foi construída utilizando **React**, proporcionando uma experiência fluida e interativa ao usuário.
+A aplicação consome dados da API do [The Movie Database (TMDb)](https://www.themoviedb.org/) para exibir informações atualizadas sobre os filmes.
 
 ## 🚀 Tecnologias utilizadas
 
 - React
+- React Router DOM (para rotas e navegação entre páginas)
 - Axios (para requisições HTTP)
-- CoinCap API
+- LocalStorage (para salvar os favoritos)
+- The Movie Database API (TMDb)
 
 ## 🧠 O que aprendi
 
-- Integração com API externa usando Axios
-- Manipulação de estados e efeitos com `useState` e `useEffect`
-- Tratamento de dados e exibição em componentes reutilizáveis
-- Formatação de valores numéricos e percentuais para melhor usabilidade
+- Uso avançado de **React Router** para criação de rotas dinâmicas
+- Integração com a API TMDb, tratamento de dados e erros
+- Uso de **LocalStorage** para persistência de dados do usuário
+- Consumo de trailers com links diretos ao YouTube
+- Criação de uma interface moderna e funcional com experiência de SPA (Single Page Application)
 
 ## 🔗 API utilizada
 
-- [CoinCap API](https://docs.coincap.io/)
+- [The Movie Database API (TMDb)](https://developer.themoviedb.org/)
 
 ---
 
-Desenvolvido com 💻 por **Guilherme Dorigon** — Projeto do curso [Sujeito Programador](https://sujeitoprogramador.com/)
+Desenvolvido com 🍿 por **Guilherme Dorigon** — Projeto do curso [Sujeito Programador](https://sujeitoprogramador.com/)
