@@ -24,10 +24,7 @@ export class TasksController {
    @Patch(":id")
    updateTask(@Param("id") id: string, @Body() body: any) {
 
-      console.log("ID: ", id)
-      console.log("BODY: ", body)
-
-      return "Atualizando tarefa"
+      return this.taskService.update(id, body)
 
    }
 
