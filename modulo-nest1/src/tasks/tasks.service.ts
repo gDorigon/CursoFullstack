@@ -13,4 +13,8 @@ export class TasksService {
       return "Buscar tarefa com ID: " + id
    }
 
+   create(body: any) {
+      return body
+   }
+
 }
