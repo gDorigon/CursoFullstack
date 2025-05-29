@@ -1,4 +1,4 @@
-import { Controller, Get } from '@nestjs/common';
+import { Controller, Get, Post } from '@nestjs/common';
 import { AppService } from '../app/app.service';
 
 @Controller()
@@ -12,6 +12,11 @@ export class AppController {
 
   @Get("/teste")
   getTest() {
-    return "rota de teste da APIa"
+    return "rota de teste da API"
+  }
+
+  @Post("/teste")
+  createTest() {
+    return "ROTA FUNCIONANDO"
   }
 }
