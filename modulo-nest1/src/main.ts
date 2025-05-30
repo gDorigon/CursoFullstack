@@ -2,19 +2,17 @@ import { NestFactory } from '@nestjs/core';
 import { AppModule } from './app/app.module';
 import { ValidationPipe } from '@nestjs/common';
 
-
 /*
-src/app.module.rs : Modulo principal do aplicativo
-src/app.controller: Define as rodas e lida com requisiçoes
-src/app.services.ts: Contem a logica do negicio, separado do controlador
-*/
+- `src/app.module.ts`: Módulo principal do aplicativo.
+- `src/app.controller.ts`: Define as rotas e lida com as requisições.
+- `src/app.service.ts`: Contém a lógica de negócio, separado do controlador.
+ */
 
-// Iniciaiza      
+// Arquivo que inicia o nosso projeto
 async function bootstrap() {
   const app = await NestFactory.create(AppModule);
   app.useGlobalPipes(new ValidationPipe({
-    whitelist: true, // Se true, ele remove as chaves que não estão no DTO
-    transform: false, // se ativo, tenta converter o tipo das variveis
+    whitelist: true, // se TRUE ele remove as chaves que não estao no DTO
   }))
   await app.listen(process.env.PORT ?? 3000);
 }

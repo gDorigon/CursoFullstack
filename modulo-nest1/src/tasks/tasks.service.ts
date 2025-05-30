@@ -2,81 +2,85 @@ import { HttpException, HttpStatus, Injectable, NotFoundException } from '@nestj
 import { Task } from './entities/task.entity';
 import { CreateTaskDto } from './dto/create-task.dto';
 import { UpdateTaskDto } from './dto/update-task.dto';
+import { PrismaService } from '../prisma/prisma.service'
 
 @Injectable()
 export class TasksService {
+  constructor(private prisma: PrismaService) { }
 
-   private tasks: Task[] = [
-      {
-         id: 1,
-         name: "seguir o dorigon no yt",
-         description: "teste",
-         completed: false
+  private tasks: Task[] = [
+    {
+      id: 1,
+      name: "Seguir o Sujeito Programador no Youtube",
+      description: "Aprendendo muito sobre programação",
+      completed: false,
+    }
+  ]
+
+  async findAll() {
+    const allTasks = await this.prisma.task.findMany();
+    return allTasks;
+  }
+
+  async findOne(id: number) {
+    const task = await this.prisma.task.findFirst({
+      where: {
+        id: id
       }
-   ]
+    })
+
+    if (task?.name) return task;
+
+    throw new HttpException("Tarefa não foi encontrada!", HttpStatus.NOT_FOUND)
+
+  }
+
+  create(createTaskDto: CreateTaskDto) {
+    const newId = this.tasks.length + 1;
+
+    const newTask = {
+      id: newId,
+      ...createTaskDto,
+      completed: false
+    }
+
+    this.tasks.push(newTask)
+
+    return newTask
+  }
+
+  update(id: number, updateTaskDto: UpdateTaskDto) {
+    const taskIndex = this.tasks.findIndex(task => task.id === id)
+
+    if (taskIndex < 0) {
+      throw new HttpException("Essa tarefa não existe.", HttpStatus.NOT_FOUND)
+    }
+
+    const taskItem = this.tasks[taskIndex]
+
+    this.tasks[taskIndex] = {
+      ...taskItem,
+      ...updateTaskDto,
+    }
 
 
-   findAll() {
-      return this.tasks
-   }
-
-   findOne(id: number) {
-      const task = this.tasks.find(task => task.id === id)
-
-      if (task) return task;
-
-      //throw new HttpException("Essa tarefa não existe.", HttpStatus.NOT_FOUND)
-
-      throw new NotFoundException("Esta tarefa não existe")
-
-   }
-
-   create(createTaskDto: CreateTaskDto) {
-
-      const newId = this.tasks.length + 1
-
-      const newTask = {
-         id: newId,
-         ...createTaskDto,
-         completed: false
-      }
-
-      this.tasks.push(newTask)
+    return this.tasks[taskIndex]
+  }
 
 
-      return newTask
-   }
+  delete(id: number) {
+    const taskIndex = this.tasks.findIndex(task => task.id === id)
 
+    if (taskIndex < 0) {
+      throw new HttpException("Essa tarefa não existe.", HttpStatus.NOT_FOUND)
+    }
 
-   update(id: number, updateTaskDto: UpdateTaskDto) {
-      const taskIndex = this.tasks.findIndex(task => task.id === Number(id))
+    this.tasks.splice(taskIndex, 1)
 
-      if (taskIndex < 0) {
-         throw new NotFoundException("Esta tarefa não existe")
-      }
+    return {
+      message: "Tarefa excluida com sucesso!"
+    }
 
-      const taskItem = this.tasks[taskIndex]
-
-      this.tasks[taskIndex] = {
-         ...taskItem,
-         ...updateTaskDto,
-      }
-
-
-      return this.tasks[taskIndex]
-   }
-
-   delete(id: number) {
-      const taskIndex = this.tasks.findIndex(task => task.id === Number(id))
-
-      if (taskIndex < 0) {
-         throw new NotFoundException("Esta tarefa não existe")
-      }
-
-      this.tasks.splice(taskIndex, 1)
-      return {
-         message: "Tarefa excluida com sucesso"
-      }
-   }
+  }
 
 }
