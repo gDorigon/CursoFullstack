@@ -1,13 +1,11 @@
-/*
-DTO -> Data transfer object ( Objeto de transferencia de dados)
+import { IsBoolean, IsOptional } from "class-validator";
 
-> Validar ou transformar dados
+import { PartialType } from "@nestjs/mapped-types";
+import { CreateTaskDto } from '../dto/create-task.dto'
 
-> Se usa para representar quais dados e em que formatos de uma determinada cama a aceita e trabalha
-*/
+export class UpdateTaskDto extends PartialType(CreateTaskDto) {
 
-export class UpdateTaskDto {
-   readonly name?: string;
-   readonly description?: string;
-   readonly completed?: boolean;
+  @IsBoolean()
+  @IsOptional()
+  readonly completed?: boolean;
 }
