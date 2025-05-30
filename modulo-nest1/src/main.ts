@@ -12,7 +12,10 @@ src/app.services.ts: Contem a logica do negicio, separado do controlador
 // Iniciaiza      
 async function bootstrap() {
   const app = await NestFactory.create(AppModule);
-  app.useGlobalPipes(new ValidationPipe())
+  app.useGlobalPipes(new ValidationPipe({
+    whitelist: true, // Se true, ele remove as chaves que não estão no DTO
+    transform: false, // se ativo, tenta converter o tipo das variveis
+  }))
   await app.listen(process.env.PORT ?? 3000);
 }
 bootstrap();
