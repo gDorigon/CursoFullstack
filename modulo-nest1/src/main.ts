@@ -1,5 +1,6 @@
 import { NestFactory } from '@nestjs/core';
 import { AppModule } from './app/app.module';
+import { ValidationPipe } from '@nestjs/common';
 
 
 /*
@@ -11,6 +12,7 @@ src/app.services.ts: Contem a logica do negicio, separado do controlador
 // Iniciaiza      
 async function bootstrap() {
   const app = await NestFactory.create(AppModule);
+  app.useGlobalPipes(new ValidationPipe())
   await app.listen(process.env.PORT ?? 3000);
 }
 bootstrap();
