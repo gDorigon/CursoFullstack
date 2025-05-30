@@ -1,5 +1,7 @@
 import { HttpException, HttpStatus, Injectable, NotFoundException } from '@nestjs/common';
 import { Task } from './entities/task.entity';
+import { CreateTaskDto } from './dto/create-task.dto';
+import { UpdateTaskDto } from './dto/update-task.dto';
 
 @Injectable()
 export class TasksService {
@@ -29,13 +31,14 @@ export class TasksService {
 
    }
 
-   create(body: any) {
+   create(createTaskDto: CreateTaskDto) {
 
       const newId = this.tasks.length + 1
 
       const newTask = {
          id: newId,
-         ...body
+         ...createTaskDto,
+         completed: false
       }
 
       this.tasks.push(newTask)
@@ -45,7 +48,7 @@ export class TasksService {
    }
 
 
-   update(id: string, body: any) {
+   update(id: string, updateTaskDto: UpdateTaskDto) {
       const taskIndex = this.tasks.findIndex(task => task.id === Number(id))
 
       if (taskIndex < 0) {
@@ -56,7 +59,7 @@ export class TasksService {
 
       this.tasks[taskIndex] = {
          ...taskItem,
-         ...body,
+         ...updateTaskDto,
       }
 
 
