@@ -1,9 +1,12 @@
-
+import { UserContext } from "../../contexts/user"
+import { useContext } from "react"
 
 export function Nome() {
+
+   const { aluno } = useContext(UserContext)
    return (
       <div>
-         <strong>Aluno: sen nome</strong>
+         <strong>Aluno: {aluno}</strong>
       </div>
    )
 }
